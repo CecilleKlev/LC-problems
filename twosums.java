@@ -11,6 +11,7 @@ TOPIC: Array
 class Solution{
     public int[] twoSum(int[] nums, int target){
 
+        //loop through the first number in the array, the nested loop through the second number in the array
         for(int i =0; i <nums.length; i++){
             for(int j = i+1; j < nums.length; j++ ){
                 if(nums[i] + nums[j] == target){
