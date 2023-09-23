@@ -1,5 +1,6 @@
 /*
 Title: Best time to buy and sell stock
+Topic: Array
 
 You are given an array "prices" where prices[i] is the price 
 of a given stock on the ith day.
@@ -21,3 +22,20 @@ Input: prices = [7,6,4,3,1]
 Output: 0
 Explanation: In this case, no transactions are done and the max profit =0.
 */ 
+
+class Solution{
+    public int maxProfit(int[] prices){
+        //Variables
+        int min_val = Integer.MAX_VALUE;
+        int max_profit =0; //put this at 0 because we havent found the profit, yet
+
+        for(int i=0; i<prices.length; i++){
+            if (prices[i] <min_val){
+                min_val=prices[i];
+            }else if (prices [i] - min_val >max_profit){
+                max_profit = prices [i]-min_val;
+            }
+        }
+        return max_profit;
+    }
+}
